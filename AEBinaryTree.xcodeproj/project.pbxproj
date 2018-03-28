@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		9F7362752069E93F002D90CE /* AEBinaryTree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F73626B2069E93F002D90CE /* AEBinaryTree.framework */; };
-		9F73627A2069E93F002D90CE /* AEBinaryTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7362792069E93F002D90CE /* AEBinaryTreeTests.swift */; };
 		9F73627C2069E93F002D90CE /* AEBinaryTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F73626E2069E93F002D90CE /* AEBinaryTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9F7362862069ED20002D90CE /* BinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7362852069ED20002D90CE /* BinaryTree.swift */; };
+		9F7362882069EE19002D90CE /* BinaryTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7362872069EE19002D90CE /* BinaryTreeTests.swift */; };
+		9F73628C206B41F1002D90CE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9F73628B206B41F0002D90CE /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,8 +29,10 @@
 		9F73626E2069E93F002D90CE /* AEBinaryTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEBinaryTree.h; sourceTree = "<group>"; };
 		9F73626F2069E93F002D90CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F7362742069E93F002D90CE /* AEBinaryTreeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AEBinaryTreeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F7362792069E93F002D90CE /* AEBinaryTreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AEBinaryTreeTests.swift; sourceTree = "<group>"; };
 		9F73627B2069E93F002D90CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F7362852069ED20002D90CE /* BinaryTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryTree.swift; sourceTree = "<group>"; };
+		9F7362872069EE19002D90CE /* BinaryTreeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryTreeTests.swift; sourceTree = "<group>"; };
+		9F73628B206B41F0002D90CE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,7 @@
 		9F7362612069E93F002D90CE = {
 			isa = PBXGroup;
 			children = (
+				9F73628B206B41F0002D90CE /* README.md */,
 				9F73626D2069E93F002D90CE /* AEBinaryTree */,
 				9F7362782069E93F002D90CE /* AEBinaryTreeTests */,
 				9F73626C2069E93F002D90CE /* Products */,
@@ -71,6 +76,7 @@
 		9F73626D2069E93F002D90CE /* AEBinaryTree */ = {
 			isa = PBXGroup;
 			children = (
+				9F7362852069ED20002D90CE /* BinaryTree.swift */,
 				9F73626E2069E93F002D90CE /* AEBinaryTree.h */,
 				9F73626F2069E93F002D90CE /* Info.plist */,
 			);
@@ -80,7 +86,7 @@
 		9F7362782069E93F002D90CE /* AEBinaryTreeTests */ = {
 			isa = PBXGroup;
 			children = (
-				9F7362792069E93F002D90CE /* AEBinaryTreeTests.swift */,
+				9F7362872069EE19002D90CE /* BinaryTreeTests.swift */,
 				9F73627B2069E93F002D90CE /* Info.plist */,
 			);
 			path = AEBinaryTreeTests;
@@ -148,6 +154,7 @@
 				TargetAttributes = {
 					9F73626A2069E93F002D90CE = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					9F7362732069E93F002D90CE = {
@@ -179,6 +186,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F73628C206B41F1002D90CE /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F7362862069ED20002D90CE /* BinaryTree.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F73627A2069E93F002D90CE /* AEBinaryTreeTests.swift in Sources */,
+				9F7362882069EE19002D90CE /* BinaryTreeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +343,7 @@
 		9F7362802069E93F002D90CE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -346,6 +356,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.AllanEvans.AEBinaryTree;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -354,6 +365,7 @@
 		9F7362812069E93F002D90CE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -374,6 +386,7 @@
 		9F7362832069E93F002D90CE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = AEBinaryTreeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -387,6 +400,7 @@
 		9F7362842069E93F002D90CE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = AEBinaryTreeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
