@@ -60,4 +60,44 @@ Node insert(Node* node, int value)
     }
     return *node;
 }
+
+NSString* repeatingString(NSString* string, int count)
+{
+    NSString* returnStr = @"";
+    for (int i = 0; i < count; i++) {
+        returnStr = [returnStr stringByAppendingString:string];
+    }
+    return returnStr;
+}
+
+NSString* stringFromNode(Node* node, int depth)
+{
+    NSString *returnStr = @"";
+    if (node == NULL) {
+        return returnStr;
+    }
+    returnStr = [returnStr stringByAppendingString: repeatingString(@"  ", depth+1)];
+    returnStr = [returnStr stringByAppendingFormat:@"%d\n", node->value];
+    if (node->left != NULL) {
+        returnStr = [returnStr stringByAppendingString: repeatingString(@"  ", depth+1)];
+        returnStr = [returnStr stringByAppendingString: @" ┗"];
+        returnStr = [returnStr stringByAppendingString:stringFromNode(node->left, depth+1)];
+    }
+    if (node->right != NULL) {
+        returnStr = [returnStr stringByAppendingString: repeatingString(@"  ", depth+1)];
+        returnStr = [returnStr stringByAppendingString: @" ┗"];
+        returnStr = [returnStr stringByAppendingString:stringFromNode(node->right, depth+1)];
+    }
+    return returnStr;
+}
+
++ (NSString*) description
+{
+    if (root == NULL) {
+        return @"nil";
+    } else {
+        return stringFromNode(root, 0);
+    }
+}
+
 @end
