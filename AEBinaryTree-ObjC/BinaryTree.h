@@ -11,8 +11,8 @@
 
 @interface BinaryTree:NSObject
 
-+ (void) initialize;
-+ (void) insert: (int) value;
+- (void) initialize;
+- (void) insert: (int) value;
 
 @end
 #endif /* BinaryTree_h */

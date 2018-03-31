@@ -17,48 +17,47 @@ struct Node
     struct Node *right;
     int value;
 };
-
 typedef struct Node Node;
 
-Node *root;
+Node* root;
 
-Node newNode(int value)
+Node* newNode(int value)
 {
-    Node node;
-    node.value = value;
-    node.left = NULL;
-    node.right = NULL;
-    return node;
+    Node* returnValue = malloc(sizeof(Node));
+    returnValue->value = value;
+    returnValue->left = NULL;
+    returnValue->right = NULL;
+    return returnValue;
 }
 
-+ (void) initialize
+- (void) initialize
 {
     root = NULL;
 }
 
-+ (void) insert:(int)value
+- (void) insert:(int)value
 {
     if (root == NULL) {
-        *root = newNode(value);
+        root = newNode(value);
     } else {
-        *root = insert(root, value);
+        root = insert(root, value);
     };
 }
 
-Node insert(Node* node, int value)
+Node* insert(Node* node, int value)
 {
     if (node == NULL) {
-        *node = newNode(value);
-        return *node;
+        node = newNode(value);
+        return node;
     };
     if (value < node->value) {
-        *node->left = insert(node->left, value);
+        node->left = insert(node->left, value);
     } else if (value == node->value) {
         node->value = value;
     } else {
-        *node->right = insert(node->right, value);
+        node->right = insert(node->right, value);
     }
-    return *node;
+    return node;
 }
 
 NSString* repeatingString(NSString* string, int count)
@@ -76,27 +75,28 @@ NSString* stringFromNode(Node* node, int depth)
     if (node == NULL) {
         return returnStr;
     }
-    returnStr = [returnStr stringByAppendingString: repeatingString(@"  ", depth+1)];
     returnStr = [returnStr stringByAppendingFormat:@"%d\n", node->value];
     if (node->left != NULL) {
-        returnStr = [returnStr stringByAppendingString: repeatingString(@"  ", depth+1)];
-        returnStr = [returnStr stringByAppendingString: @" ┗"];
+        returnStr = [returnStr stringByAppendingString: repeatingString(@"  ", depth)];
+        returnStr = [returnStr stringByAppendingString: @"┗ "];
         returnStr = [returnStr stringByAppendingString:stringFromNode(node->left, depth+1)];
     }
     if (node->right != NULL) {
-        returnStr = [returnStr stringByAppendingString: repeatingString(@"  ", depth+1)];
-        returnStr = [returnStr stringByAppendingString: @" ┗"];
+        returnStr = [returnStr stringByAppendingString: repeatingString(@"  ", depth)];
+        returnStr = [returnStr stringByAppendingString: @"┗ "];
         returnStr = [returnStr stringByAppendingString:stringFromNode(node->right, depth+1)];
     }
     return returnStr;
 }
 
-+ (NSString*) description
+- (NSString*) description
 {
     if (root == NULL) {
         return @"nil";
     } else {
-        return stringFromNode(root, 0);
+        NSString* returnStr = @"\n";
+        returnStr = [returnStr stringByAppendingString:stringFromNode(root, 0)];
+        return returnStr;
     }
 }
 
