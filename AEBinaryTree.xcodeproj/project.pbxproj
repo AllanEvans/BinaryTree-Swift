@@ -12,6 +12,11 @@
 		9F7362862069ED20002D90CE /* BinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7362852069ED20002D90CE /* BinaryTree.swift */; };
 		9F7362882069EE19002D90CE /* BinaryTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7362872069EE19002D90CE /* BinaryTreeTests.swift */; };
 		9F73628C206B41F1002D90CE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9F73628B206B41F0002D90CE /* README.md */; };
+		9F73629B206F0F6E002D90CE /* AEBinaryTree_ObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F736292206F0F6E002D90CE /* AEBinaryTree_ObjC.framework */; };
+		9F7362A0206F0F6E002D90CE /* AEBinaryTree_ObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F73629F206F0F6E002D90CE /* AEBinaryTree_ObjCTests.m */; };
+		9F7362A2206F0F6E002D90CE /* AEBinaryTree_ObjC.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F736294206F0F6E002D90CE /* AEBinaryTree_ObjC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9F7362AA206F10C3002D90CE /* BinaryTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7362A9206F10C3002D90CE /* BinaryTree.m */; };
+		9F7362AC206F1103002D90CE /* BinaryTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F7362AB206F1103002D90CE /* BinaryTree.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -21,6 +26,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 9F73626A2069E93F002D90CE;
 			remoteInfo = AEBinaryTree;
+		};
+		9F73629C206F0F6E002D90CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F7362622069E93F002D90CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F736291206F0F6E002D90CE;
+			remoteInfo = "AEBinaryTree-ObjC";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -33,6 +45,14 @@
 		9F7362852069ED20002D90CE /* BinaryTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryTree.swift; sourceTree = "<group>"; };
 		9F7362872069EE19002D90CE /* BinaryTreeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryTreeTests.swift; sourceTree = "<group>"; };
 		9F73628B206B41F0002D90CE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9F736292206F0F6E002D90CE /* AEBinaryTree_ObjC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AEBinaryTree_ObjC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F736294206F0F6E002D90CE /* AEBinaryTree_ObjC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEBinaryTree_ObjC.h; sourceTree = "<group>"; };
+		9F736295206F0F6E002D90CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F73629A206F0F6E002D90CE /* AEBinaryTree-ObjCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AEBinaryTree-ObjCTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F73629F206F0F6E002D90CE /* AEBinaryTree_ObjCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEBinaryTree_ObjCTests.m; sourceTree = "<group>"; };
+		9F7362A1206F0F6E002D90CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F7362A9206F10C3002D90CE /* BinaryTree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BinaryTree.m; sourceTree = "<group>"; };
+		9F7362AB206F1103002D90CE /* BinaryTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BinaryTree.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +71,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9F73628E206F0F6E002D90CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F736297206F0F6E002D90CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F73629B206F0F6E002D90CE /* AEBinaryTree_ObjC.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -60,6 +95,8 @@
 				9F73628B206B41F0002D90CE /* README.md */,
 				9F73626D2069E93F002D90CE /* AEBinaryTree */,
 				9F7362782069E93F002D90CE /* AEBinaryTreeTests */,
+				9F736293206F0F6E002D90CE /* AEBinaryTree-ObjC */,
+				9F73629E206F0F6E002D90CE /* AEBinaryTree-ObjCTests */,
 				9F73626C2069E93F002D90CE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,6 +106,8 @@
 			children = (
 				9F73626B2069E93F002D90CE /* AEBinaryTree.framework */,
 				9F7362742069E93F002D90CE /* AEBinaryTreeTests.xctest */,
+				9F736292206F0F6E002D90CE /* AEBinaryTree_ObjC.framework */,
+				9F73629A206F0F6E002D90CE /* AEBinaryTree-ObjCTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,6 +131,26 @@
 			path = AEBinaryTreeTests;
 			sourceTree = "<group>";
 		};
+		9F736293206F0F6E002D90CE /* AEBinaryTree-ObjC */ = {
+			isa = PBXGroup;
+			children = (
+				9F736294206F0F6E002D90CE /* AEBinaryTree_ObjC.h */,
+				9F7362AB206F1103002D90CE /* BinaryTree.h */,
+				9F7362A9206F10C3002D90CE /* BinaryTree.m */,
+				9F736295206F0F6E002D90CE /* Info.plist */,
+			);
+			path = "AEBinaryTree-ObjC";
+			sourceTree = "<group>";
+		};
+		9F73629E206F0F6E002D90CE /* AEBinaryTree-ObjCTests */ = {
+			isa = PBXGroup;
+			children = (
+				9F73629F206F0F6E002D90CE /* AEBinaryTree_ObjCTests.m */,
+				9F7362A1206F0F6E002D90CE /* Info.plist */,
+			);
+			path = "AEBinaryTree-ObjCTests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -100,6 +159,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F73627C2069E93F002D90CE /* AEBinaryTree.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F73628F206F0F6E002D90CE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F7362A2206F0F6E002D90CE /* AEBinaryTree_ObjC.h in Headers */,
+				9F7362AC206F1103002D90CE /* BinaryTree.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +210,42 @@
 			productReference = 9F7362742069E93F002D90CE /* AEBinaryTreeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		9F736291206F0F6E002D90CE /* AEBinaryTree-ObjC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F7362A3206F0F6E002D90CE /* Build configuration list for PBXNativeTarget "AEBinaryTree-ObjC" */;
+			buildPhases = (
+				9F73628D206F0F6E002D90CE /* Sources */,
+				9F73628E206F0F6E002D90CE /* Frameworks */,
+				9F73628F206F0F6E002D90CE /* Headers */,
+				9F736290206F0F6E002D90CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AEBinaryTree-ObjC";
+			productName = "AEBinaryTree-ObjC";
+			productReference = 9F736292206F0F6E002D90CE /* AEBinaryTree_ObjC.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9F736299206F0F6E002D90CE /* AEBinaryTree-ObjCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F7362A6206F0F6E002D90CE /* Build configuration list for PBXNativeTarget "AEBinaryTree-ObjCTests" */;
+			buildPhases = (
+				9F736296206F0F6E002D90CE /* Sources */,
+				9F736297206F0F6E002D90CE /* Frameworks */,
+				9F736298206F0F6E002D90CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9F73629D206F0F6E002D90CE /* PBXTargetDependency */,
+			);
+			name = "AEBinaryTree-ObjCTests";
+			productName = "AEBinaryTree-ObjCTests";
+			productReference = 9F73629A206F0F6E002D90CE /* AEBinaryTree-ObjCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -161,6 +265,14 @@
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
+					9F736291206F0F6E002D90CE = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					9F736299206F0F6E002D90CE = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 9F7362652069E93F002D90CE /* Build configuration list for PBXProject "AEBinaryTree" */;
@@ -177,6 +289,8 @@
 			targets = (
 				9F73626A2069E93F002D90CE /* AEBinaryTree */,
 				9F7362732069E93F002D90CE /* AEBinaryTreeTests */,
+				9F736291206F0F6E002D90CE /* AEBinaryTree-ObjC */,
+				9F736299206F0F6E002D90CE /* AEBinaryTree-ObjCTests */,
 			);
 		};
 /* End PBXProject section */
@@ -191,6 +305,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		9F7362722069E93F002D90CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F736290206F0F6E002D90CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F736298206F0F6E002D90CE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -216,6 +344,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9F73628D206F0F6E002D90CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F7362AA206F10C3002D90CE /* BinaryTree.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F736296206F0F6E002D90CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F7362A0206F0F6E002D90CE /* AEBinaryTree_ObjCTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -223,6 +367,11 @@
 			isa = PBXTargetDependency;
 			target = 9F73626A2069E93F002D90CE /* AEBinaryTree */;
 			targetProxy = 9F7362762069E93F002D90CE /* PBXContainerItemProxy */;
+		};
+		9F73629D206F0F6E002D90CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9F736291206F0F6E002D90CE /* AEBinaryTree-ObjC */;
+			targetProxy = 9F73629C206F0F6E002D90CE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -411,6 +560,70 @@
 			};
 			name = Release;
 		};
+		9F7362A4206F0F6E002D90CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "AEBinaryTree-ObjC/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.AllanEvans.AEBinaryTree-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9F7362A5206F0F6E002D90CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "AEBinaryTree-ObjC/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.AllanEvans.AEBinaryTree-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9F7362A7206F0F6E002D90CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2J36SKK3LL;
+				INFOPLIST_FILE = "AEBinaryTree-ObjCTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.AllanEvans.AEBinaryTree-ObjCTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9F7362A8206F0F6E002D90CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2J36SKK3LL;
+				INFOPLIST_FILE = "AEBinaryTree-ObjCTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.AllanEvans.AEBinaryTree-ObjCTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -437,6 +650,24 @@
 			buildConfigurations = (
 				9F7362832069E93F002D90CE /* Debug */,
 				9F7362842069E93F002D90CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F7362A3206F0F6E002D90CE /* Build configuration list for PBXNativeTarget "AEBinaryTree-ObjC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F7362A4206F0F6E002D90CE /* Debug */,
+				9F7362A5206F0F6E002D90CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F7362A6206F0F6E002D90CE /* Build configuration list for PBXNativeTarget "AEBinaryTree-ObjCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F7362A7206F0F6E002D90CE /* Debug */,
+				9F7362A8206F0F6E002D90CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
