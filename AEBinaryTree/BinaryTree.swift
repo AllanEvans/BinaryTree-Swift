@@ -10,7 +10,7 @@ import Foundation
 
 class BinaryTree<B: Comparable> {
     
-    class Tree: CustomDebugStringConvertible {
+    private class Tree: CustomDebugStringConvertible {
         var value: B
         var rightTree: Tree?
         var leftTree: Tree?
@@ -181,17 +181,34 @@ class BinaryTree<B: Comparable> {
 
     }
     
-    var root: Tree?
+    private var root: Tree?
     
-    func insert(_ value: B) {
-        enumerationIsValid = false
-        guard root != nil else {
-            root = Tree(value: value)
-            return
+    private var queue: DispatchQueue = DispatchQueue(label: "me.AllanEvans.BinaryTree.\(Date())")
+    
+    func insert(_ value: B) -> Int {
+        return queue.sync {
+            enumerationIsValid = false
+            guard root != nil else {
+                root = Tree(value: value)
+                return
+            }
+            root = root!.insert(value)
+            return root?.index(of: value, startingCount: 0)
         }
-        root = root!.insert(value)
     }
-    
+
+    func insert(_ value: B, complete: ((Int)->())?) {
+        queue.async {
+            self.enumerationIsValid = false
+            guard self.root != nil else {
+                self.root = Tree(value: value)
+                return
+            }
+            self.root = self.root!.insert(value)
+            let index = self.index(of: value)
+        }
+    }
+
     func insert(_ values: [B]) {
         for value in values {
             insert(value)
