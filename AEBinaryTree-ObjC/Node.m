@@ -10,14 +10,36 @@
 #import "Node.h"
 
 @implementation Node: NSObject
+#define Element id<Comparable>
 
-- (id) initializeWithValue:(id<Comparable>) value
+- (id) initializeWithValue:(Element) value
 {
     self.value = value;
     self.left = NULL;
     self.right = NULL;
     return self;
 }
+
+- (Node<Element>*) insert:(Element) value
+{
+    if ([value compare:self.value] == NSOrderedAscending) {
+        if (self.left == NULL) {
+            self.left = [[Node<Element> alloc] initializeWithValue:value];
+        } else {
+            self.left = [self.left insert:value];
+        }
+    } else if ([value compare:self.value] == NSOrderedSame) {
+        self.value = value;
+    } else {
+        if (self.right == NULL) {
+            self.right = [[Node<Element> alloc] initializeWithValue:value];
+        } else {
+            self.right = [self.right insert:value];
+        }
+    }
+    return self;
+}
+
 
 - (int) depth {
     int _depth = 1;

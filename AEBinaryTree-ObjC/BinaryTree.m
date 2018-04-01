@@ -30,24 +30,8 @@ Node<Element>* root;
     if (root == NULL) {
         root = [[Node<Element> alloc] initializeWithValue: value];
     } else {
-        root = insert(root, value);
+        root = [root insert:value];
     };
-}
-
-Node<Element>* insert(Node<Element>* node, Element value)
-{
-    if (node == NULL) {
-        node = [[Node<Element> alloc] initializeWithValue:value];
-        return node;
-    };
-    if ([value compare:node.value] == NSOrderedAscending) {
-        node.left = insert(node.left, value);
-    } else if ([value compare:node.value] == NSOrderedSame) {
-        node.value = value;
-    } else {
-        node.right = insert(node.right, value);
-    }
-    return node;
 }
 
 NSString* repeatingString(NSString* string, int count)

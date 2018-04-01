@@ -16,7 +16,10 @@
 @property (nonnull)Element value;
 @property (nullable)Node<Element>* left;
 @property (nullable)Node<Element>* right;
+
 - (nonnull id) initializeWithValue: (nonnull Element) value;
+- (nonnull Node<Element>*) insert:(nonnull Element) value;
+
 @property (readonly)int depth;
 
 @end
