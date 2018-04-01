@@ -97,6 +97,8 @@ NSString* letterG;
     [tree insert: letterE];
     [tree insert: letterG];
     NSLog([tree description]);
+    NSLog([NSString stringWithFormat:@"Depth %d", tree.depth]);
+    XCTAssertTrue(tree.depth == 3, "Depth failed");
 }
 
 - (void)testReversedInsert {

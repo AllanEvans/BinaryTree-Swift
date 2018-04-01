@@ -90,4 +90,9 @@ NSString* stringFromNode(Node* node, int depth)
     }
 }
 
+- (int) depth
+{
+    return root.depth;
+}
+
 @end

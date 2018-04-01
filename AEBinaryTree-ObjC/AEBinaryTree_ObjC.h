@@ -15,5 +15,7 @@ FOUNDATION_EXPORT double AEBinaryTree_ObjCVersionNumber;
 FOUNDATION_EXPORT const unsigned char AEBinaryTree_ObjCVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <AEBinaryTree_ObjC/PublicHeader.h>
+#import <AEBinaryTree_ObjC/Comparable.h>
+#import <AEBinaryTree_ObjC/BinaryTree.h>
 
 

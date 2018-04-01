@@ -13,10 +13,11 @@
 
 @interface Node<Element: id<Comparable>>: NSObject
 
-@property Element value;
-@property Node<Element>* left;
-@property Node<Element>* right;
-- (id) initializeWithValue: (Element) value;
+@property (nonnull)Element value;
+@property (nullable)Node<Element>* left;
+@property (nullable)Node<Element>* right;
+- (nonnull id) initializeWithValue: (nonnull Element) value;
+@property (readonly)int depth;
 
 @end
 

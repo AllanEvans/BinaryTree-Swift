@@ -14,6 +14,6 @@
 
 - (id) init;
 - (void) insert: (Element) value;
-
+@property (readonly)int depth;
 @end
 #endif /* BinaryTree_h */

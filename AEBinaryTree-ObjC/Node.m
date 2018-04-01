@@ -19,4 +19,15 @@
     return self;
 }
 
+- (int) depth {
+    int _depth = 1;
+    if (self.left != NULL) {
+        _depth = self.left.depth+1;
+    }
+    if (self.right != NULL) {
+        _depth = MAX(_depth,self.right.depth+1);
+    }
+    return _depth;
+}
+
 @end
