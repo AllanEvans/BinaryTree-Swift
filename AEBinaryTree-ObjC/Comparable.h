@@ -15,7 +15,12 @@
 @property NSString* description;
 
 @end
-#endif /* Comparable_h */
 
 @interface NSNumber () <Comparable>
 @end
+
+@interface NSString () <Comparable>
+@end
+#endif /* Comparable_h */
+
+

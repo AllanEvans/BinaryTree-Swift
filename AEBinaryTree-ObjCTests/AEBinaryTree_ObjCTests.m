@@ -23,6 +23,13 @@ NSNumber* numberFive;
 NSNumber* numberSix;
 NSNumber* numberSeven;
 
+NSString* letterA;
+NSString* letterB;
+NSString* letterC;
+NSString* letterD;
+NSString* letterE;
+NSString* letterF;
+NSString* letterG;
 
 - (void)setUp {
     [super setUp];
@@ -34,6 +41,14 @@ NSNumber* numberSeven;
     numberFive = [[NSNumber alloc] initWithInt:5];
     numberSix = [[NSNumber alloc] initWithInt:6];
     numberSeven = [[NSNumber alloc] initWithInt:7];
+    
+    letterA = [[NSString alloc] initWithUTF8String: "a"];
+    letterB = [[NSString alloc] initWithUTF8String: "b"];
+    letterC = [[NSString alloc] initWithUTF8String: "c"];
+    letterD = [[NSString alloc] initWithUTF8String: "d"];
+    letterE = [[NSString alloc] initWithUTF8String: "e"];
+    letterF = [[NSString alloc] initWithUTF8String: "f"];
+    letterG = [[NSString alloc] initWithUTF8String: "g"];
 }
 
 - (void)tearDown {
@@ -41,7 +56,7 @@ NSNumber* numberSeven;
     [super tearDown];
 }
 
-- (void)testBasicInsert {
+- (void)testBasicInsertNumber {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
     BinaryTree* tree = [[BinaryTree<NSNumber *> alloc] init];
@@ -55,7 +70,8 @@ NSNumber* numberSeven;
     NSLog([tree description]);
 }
 
-- (void)testBalancedInsert {
+
+- (void)testBalancedInsertNumber {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
     BinaryTree* tree = [[BinaryTree<NSNumber *> alloc] init];
@@ -66,6 +82,20 @@ NSNumber* numberSeven;
     [tree insert: numberSix];
     [tree insert: numberFive];
     [tree insert: numberSeven];
+    NSLog([tree description]);
+}
+
+- (void)testBalancedInsertString {
+    // This is an example of a functional test case.
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    BinaryTree* tree = [[BinaryTree<NSString *> alloc] init];
+    [tree insert: letterD];
+    [tree insert: letterB];
+    [tree insert: letterA];
+    [tree insert: letterC];
+    [tree insert: letterF];
+    [tree insert: letterE];
+    [tree insert: letterG];
     NSLog([tree description]);
 }
 
