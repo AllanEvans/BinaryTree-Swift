@@ -8,54 +8,44 @@
 
 #import <Foundation/Foundation.h>
 #import <BinaryTree.h>
+#import <Comparable.h>
+#import <Node.h>
 
 @implementation BinaryTree
 
-struct Node
-{
-    struct Node *left;
-    struct Node *right;
-    int value;
-};
-typedef struct Node Node;
+#define Element id<Comparable>
 
-Node* root;
+Node<Element>* root;
 
-Node* newNode(int value)
-{
-    Node* returnValue = malloc(sizeof(Node));
-    returnValue->value = value;
-    returnValue->left = NULL;
-    returnValue->right = NULL;
-    return returnValue;
-}
 
-- (void) initialize
+- (id) init
 {
+    self = [super init];
     root = NULL;
+    return self;
 }
 
-- (void) insert:(int)value
+- (void) insert:(Element) value
 {
     if (root == NULL) {
-        root = newNode(value);
+        root = [[Node<Element> alloc] initializeWithValue: value];
     } else {
         root = insert(root, value);
     };
 }
 
-Node* insert(Node* node, int value)
+Node<Element>* insert(Node<Element>* node, Element value)
 {
     if (node == NULL) {
-        node = newNode(value);
+        node = [[Node<Element> alloc] initializeWithValue:value];
         return node;
     };
-    if (value < node->value) {
-        node->left = insert(node->left, value);
-    } else if (value == node->value) {
-        node->value = value;
+    if ([value compare:node.value] == NSOrderedAscending) {
+        node.left = insert(node.left, value);
+    } else if ([value compare:node.value] == NSOrderedSame) {
+        node.value = value;
     } else {
-        node->right = insert(node->right, value);
+        node.right = insert(node.right, value);
     }
     return node;
 }
@@ -75,16 +65,16 @@ NSString* stringFromNode(Node* node, int depth)
     if (node == NULL) {
         return returnStr;
     }
-    returnStr = [returnStr stringByAppendingFormat:@"%d\n", node->value];
-    if (node->left != NULL) {
+    returnStr = [returnStr stringByAppendingFormat:@"%@\n", node.value.description];
+    if (node.left != NULL) {
         returnStr = [returnStr stringByAppendingString: repeatingString(@"  ", depth)];
         returnStr = [returnStr stringByAppendingString: @"┗ "];
-        returnStr = [returnStr stringByAppendingString:stringFromNode(node->left, depth+1)];
+        returnStr = [returnStr stringByAppendingString:stringFromNode(node.left, depth+1)];
     }
-    if (node->right != NULL) {
+    if (node.right != NULL) {
         returnStr = [returnStr stringByAppendingString: repeatingString(@"  ", depth)];
         returnStr = [returnStr stringByAppendingString: @"┗ "];
-        returnStr = [returnStr stringByAppendingString:stringFromNode(node->right, depth+1)];
+        returnStr = [returnStr stringByAppendingString:stringFromNode(node.right, depth+1)];
     }
     return returnStr;
 }

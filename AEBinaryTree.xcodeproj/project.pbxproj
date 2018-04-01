@@ -17,6 +17,9 @@
 		9F7362A2206F0F6E002D90CE /* AEBinaryTree_ObjC.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F736294206F0F6E002D90CE /* AEBinaryTree_ObjC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F7362AA206F10C3002D90CE /* BinaryTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7362A9206F10C3002D90CE /* BinaryTree.m */; };
 		9F7362AC206F1103002D90CE /* BinaryTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F7362AB206F1103002D90CE /* BinaryTree.h */; };
+		9F7362AE20704474002D90CE /* Comparable.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F7362AD20704474002D90CE /* Comparable.h */; };
+		9F7362B020714D34002D90CE /* Node.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F7362AF20714D34002D90CE /* Node.h */; };
+		9F7362B220714D4C002D90CE /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7362B120714D4C002D90CE /* Node.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		9F7362A1206F0F6E002D90CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F7362A9206F10C3002D90CE /* BinaryTree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BinaryTree.m; sourceTree = "<group>"; };
 		9F7362AB206F1103002D90CE /* BinaryTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BinaryTree.h; sourceTree = "<group>"; };
+		9F7362AD20704474002D90CE /* Comparable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Comparable.h; sourceTree = "<group>"; };
+		9F7362AF20714D34002D90CE /* Node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		9F7362B120714D4C002D90CE /* Node.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Node.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,8 +141,11 @@
 			isa = PBXGroup;
 			children = (
 				9F736294206F0F6E002D90CE /* AEBinaryTree_ObjC.h */,
+				9F7362AD20704474002D90CE /* Comparable.h */,
 				9F7362AB206F1103002D90CE /* BinaryTree.h */,
 				9F7362A9206F10C3002D90CE /* BinaryTree.m */,
+				9F7362AF20714D34002D90CE /* Node.h */,
+				9F7362B120714D4C002D90CE /* Node.m */,
 				9F736295206F0F6E002D90CE /* Info.plist */,
 			);
 			path = "AEBinaryTree-ObjC";
@@ -168,6 +177,8 @@
 			files = (
 				9F7362A2206F0F6E002D90CE /* AEBinaryTree_ObjC.h in Headers */,
 				9F7362AC206F1103002D90CE /* BinaryTree.h in Headers */,
+				9F7362B020714D34002D90CE /* Node.h in Headers */,
+				9F7362AE20704474002D90CE /* Comparable.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F7362AA206F10C3002D90CE /* BinaryTree.m in Sources */,
+				9F7362B220714D4C002D90CE /* Node.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

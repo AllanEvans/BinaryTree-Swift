@@ -8,11 +8,12 @@
 
 #ifndef BinaryTree_h
 #define BinaryTree_h
+#import "Comparable.h"
 
-@interface BinaryTree:NSObject
+@interface BinaryTree<Element: id<Comparable>>:NSObject
 
-- (void) initialize;
-- (void) insert: (int) value;
+- (id) init;
+- (void) insert: (Element) value;
 
 @end
 #endif /* BinaryTree_h */
