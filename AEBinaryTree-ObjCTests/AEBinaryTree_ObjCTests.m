@@ -56,6 +56,28 @@ NSString* letterG;
     [super tearDown];
 }
 
+- (void)testRotateLeft {
+    // This is an example of a functional test case.
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    BinaryTree* tree = [[BinaryTree<NSNumber *> alloc] init];
+    [tree insert: numberOne];
+    [tree insert: numberTwo];
+    [tree insert: numberThree];
+    NSLog([tree description]);
+    XCTAssertTrue(tree.depth == 2, "Depth failed");
+}
+
+- (void)testRotateRight {
+    // This is an example of a functional test case.
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    BinaryTree* tree = [[BinaryTree<NSNumber *> alloc] init];
+    [tree insert: numberThree];
+    [tree insert: numberTwo];
+    [tree insert: numberOne];
+    NSLog([tree description]);
+    XCTAssertTrue(tree.depth == 2, "Depth failed");
+}
+
 - (void)testBasicInsertNumber {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
@@ -70,7 +92,6 @@ NSString* letterG;
     NSLog([tree description]);
 }
 
-
 - (void)testBalancedInsertNumber {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
@@ -83,6 +104,7 @@ NSString* letterG;
     [tree insert: numberFive];
     [tree insert: numberSeven];
     NSLog([tree description]);
+    XCTAssert(tree.depth == 3, @"Expected 3 got different");
 }
 
 - (void)testBalancedInsertString {
