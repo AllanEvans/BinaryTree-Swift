@@ -149,6 +149,19 @@ class BinaryTree<B: Comparable> {
             }
         }
         
+        subscript(index: Int) -> B {
+            let leftCount = leftTree?.count ?? 0
+            if let left = leftTree,
+                index < leftCount {
+                return left[index]
+            } else if let right = rightTree,
+                index > leftCount {
+                return right[index-leftCount-1]
+            } else {
+                return value
+            }
+        }
+        
         func rotateLeft() -> Tree {
             let returnTree = rightTree!
             self.rightTree = rightTree?.leftTree
@@ -229,6 +242,10 @@ class BinaryTree<B: Comparable> {
     
     func index(of value: B) -> Int? {
         return root?.index(of: value, startingCount: 0)
+    }
+    
+    subscript(index: Int) -> B {
+        return root![index]
     }
     
     var depth: Int {
