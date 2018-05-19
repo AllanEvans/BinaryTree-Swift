@@ -39,7 +39,7 @@ A thread-safe Swift Binary Search Tree.  This implementation conforms to the AVL
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = { :type => "MIT" }
+s.license      = { :type => "MIT",  :file => "LICENSE.md"}
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
