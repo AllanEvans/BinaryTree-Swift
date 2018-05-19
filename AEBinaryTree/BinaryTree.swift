@@ -197,7 +197,7 @@ open class BinaryTree<B: Comparable> {
     private var root: Tree?
     private var queue = DispatchQueue(label: "com.Aelyssum.BinaryTree.\(type(of: B.self)).\(Date())")
     
-    func insert(_ value: B) {
+    open func insert(_ value: B) {
         queue.sync {
             guard root != nil else {
                 root = Tree(value: value)
@@ -207,67 +207,67 @@ open class BinaryTree<B: Comparable> {
         }
     }
     
-    func insert(_ values: [B]) {
+    open func insert<Seq: Sequence>(_ values: Seq) where Seq.Element == B {
         for value in values {
             insert(value)
         }
     }
     
-    func contains(_ value: B) -> Bool {
+    open func contains(_ value: B) -> Bool {
         return queue.sync {
             return root?.contains(value) ?? false
         }
     }
     
-    func remove(_ value: B) {
+    open func remove(_ value: B) {
         queue.sync {
             root = root?.remove(value)
         }
     }
     
-    func remove(_ values: [B]) {
+    open func remove<Seq: Sequence>(_ values: Seq) where Seq.Element == B {
         for value in values {
             remove(value)
         }
     }
     
-    var enumerated: [B] {
+    open var enumerated: [B] {
         return queue.sync {
             return root?.enumerated ?? [B]()
         }
     }
     
-    func index(of value: B) -> Int? {
+    open func index(of value: B) -> Int? {
         return queue.sync {
            return root?.index(of: value, startingCount: 0)
         }
     }
     
-    subscript(index: Int) -> B {
+    open subscript(index: Int) -> B {
         return queue.sync {
            return root![index]
         }
     }
     
-    var depth: Int {
+    open var depth: Int {
         return queue.sync {
             return root?.depth ?? 0
         }
     }
     
-    var count: Int {
+    open var count: Int {
         return queue.sync {
             return root?.count ?? 0
         }
     }
     
-    var isEmpty: Bool {
+    open var isEmpty: Bool {
         return queue.sync {
             return root == nil
         }
     }
     
-    var isBalanced: Bool {
+    open var isBalanced: Bool {
         return queue.sync {
             return root?.isBalanced ?? true
         }
