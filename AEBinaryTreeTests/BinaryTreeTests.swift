@@ -116,6 +116,17 @@ class BinaryTreeTests: XCTestCase {
         XCTAssert(tree.count == values.count , "Wrong count \(tree.count)")
     }
 
+    func testSubscript() {
+        let tree = BinaryTree<Int>()
+        let values = [6,5,4,3,2,1,0]
+        tree.insert(values)
+        print(tree)
+        let sortedValues = values.sorted()
+        for index in 0..<sortedValues.count {
+            XCTAssert(sortedValues[index]==tree[index], "Failure at \(index): Expected \(sortedValues[index]), got \(tree[index])")
+        }
+    }
+
     func testRemove() {
         let tree = BinaryTree<Int>()
         let values = [6,5,4,3,2,1,0]
