@@ -39,9 +39,7 @@ A thread-safe Swift Binary Search Tree.  This implementation conforms to the AVL
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = "MIT"
-  # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
-
+  s.license      = { :type => "MIT" }
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -72,7 +70,7 @@ A thread-safe Swift Binary Search Tree.  This implementation conforms to the AVL
   #
 
   s.source       = { 
-	:git => "http://github.com/AllanEvans/BinaryTree-Swift.git", 
+	:git => "https://github.com/AllanEvans/BinaryTree-Swift.git",
 	:tag => "#{s.version}" 
 	}
 
