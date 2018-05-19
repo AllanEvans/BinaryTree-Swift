@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
 A thread-safe Swift Binary Search Tree.  This implementation conforms to the AVL self-balancing algorithm guaranteeing that all branches of the tree have a depth difference of less than 2.  All accessor methods are thread-safe, with internal operations performed on an internal dispatch queue off the main thread.  Random access subscripting is available with O(logN) complexity, but enabling the BinaryTree to be used for populating tableviews and collection views.
                    DESC
 
-  s.homepage     = "http://github.com/AllanEvans/AEBinaryTree-Swift"
+  s.homepage     = "http://github.com/AllanEvans/BinaryTree-Swift"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -72,7 +72,7 @@ A thread-safe Swift Binary Search Tree.  This implementation conforms to the AVL
   #
 
   s.source       = { 
-	:git => "http://github/AllanEvans/BinaryTree-Swift.git", 
+	:git => "http://github.com/AllanEvans/BinaryTree-Swift.git", 
 	:tag => "#{s.version}" 
 	}
 
