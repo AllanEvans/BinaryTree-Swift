@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BinaryTree<B: Comparable> {
+open class BinaryTree<B: Comparable> {
     
     class Tree: CustomDebugStringConvertible {
         var value: B
@@ -194,81 +194,92 @@ class BinaryTree<B: Comparable> {
 
     }
     
-    var root: Tree?
+    private var root: Tree?
+    private var queue = DispatchQueue(label: "com.Aelyssum.BinaryTree.\(type(of: B.self)).\(Date())")
     
     func insert(_ value: B) {
-        enumerationIsValid = false
-        guard root != nil else {
-            root = Tree(value: value)
-            return
+        queue.sync {
+            guard root != nil else {
+                root = Tree(value: value)
+                return
+            }
+            root = root!.insert(value)
         }
-        root = root!.insert(value)
     }
     
     func insert(_ values: [B]) {
         for value in values {
             insert(value)
         }
-        enumerationIsValid = false
     }
     
     func contains(_ value: B) -> Bool {
-        return root?.contains(value) ?? false
+        return queue.sync {
+            return root?.contains(value) ?? false
+        }
     }
     
     func remove(_ value: B) {
-        root = root?.remove(value)
-        enumerationIsValid = false
+        queue.sync {
+            root = root?.remove(value)
+        }
     }
     
     func remove(_ values: [B]) {
         for value in values {
-            root = root?.remove(value)
+            remove(value)
         }
-        enumerationIsValid = false
     }
     
-    private var array = [B]()
-    private var enumerationIsValid = true
-    
     var enumerated: [B] {
-        if !enumerationIsValid {
-            print("Enumeration invalid.  Enumerating...")
-            array = root?.enumerated ?? [B]()
-            enumerationIsValid = true
+        return queue.sync {
+            return root?.enumerated ?? [B]()
         }
-        return array
     }
     
     func index(of value: B) -> Int? {
-        return root?.index(of: value, startingCount: 0)
+        return queue.sync {
+           return root?.index(of: value, startingCount: 0)
+        }
     }
     
     subscript(index: Int) -> B {
-        return root![index]
+        return queue.sync {
+           return root![index]
+        }
     }
     
     var depth: Int {
-        return root?.depth ?? 0
+        return queue.sync {
+            return root?.depth ?? 0
+        }
     }
     
     var count: Int {
-        return root?.count ?? 0
+        return queue.sync {
+            return root?.count ?? 0
+        }
     }
     
     var isEmpty: Bool {
-        return root == nil
+        return queue.sync {
+            return root == nil
+        }
     }
     
     var isBalanced: Bool {
-        return root?.isBalanced ?? true
+        return queue.sync {
+            return root?.isBalanced ?? true
+        }
     }
 }
 
 extension BinaryTree: CustomDebugStringConvertible {
 
-    var debugDescription: String {
-        return "  "+(root?.debugDescription ?? "nil")
+    open var debugDescription: String {
+        return queue.sync {
+            return "  "+(root?.debugDescription ?? "nil")
+        }
     }
     
 }
