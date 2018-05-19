@@ -1,0 +1,16 @@
+PODS:
+  - AEBinaryTree (1.0.0)
+
+DEPENDENCIES:
+  - AEBinaryTree (from `.`)
+
+EXTERNAL SOURCES:
+  AEBinaryTree:
+    :path: .
+
+SPEC CHECKSUMS:
+  AEBinaryTree: da232965950de4537e82ff814efc14762aca2ab1
+
+PODFILE CHECKSUM: e01141e4647d1aa80c0270cb7bd47b8ac0831dad
+
+COCOAPODS: 1.4.0
