@@ -7,7 +7,12 @@
 //
 
 import Foundation
+/** A BinaryTree or binary search tree conforming to the AVL (Adelson-Velsky and Landis) requirement of self-balancing where each subtree has left and right subtrees with depths (or heights) that differ by at most 1.  The BinaryTree class is generic and accepts any type that conforms to the Comparable protocol.  Elements in the tree must be unique.  If a new value is inserted into the tree that is equivalent (in an Equatable sense) to an existing value, the existing value is updated to the new value.
 
+ The BinaryTree class provides subscripting with an integer-valued parameter for random-accessibility, albeit at O(logN) complexity.  This is sufficiently fast for the BinaryTree to be a data source delegate for UITableView or UICollectionView instances.  For faster operation, the enumerated property provides a representation as an Array.
+ 
+ Internal operation of each BinaryTree instance is thread-safe.  The BinaryTree class provides convenience methods for  insert() and remove() and index(of:) operations with O(logN) complexity, with internal recursive operations performed off the main queue.
+*/
 open class BinaryTree<B: Comparable> {
     
     class Tree: CustomDebugStringConvertible {
@@ -78,6 +83,7 @@ open class BinaryTree<B: Comparable> {
                 }
                 return insertLeft(newValue)
             } else {
+                self.value = newValue
                 return self
             }
         }
@@ -197,6 +203,9 @@ open class BinaryTree<B: Comparable> {
     private var root: Tree?
     private var queue = DispatchQueue(label: "com.Aelyssum.BinaryTree.\(type(of: B.self)).\(Date())")
     
+    /// Insert a new element into the tree.  The tree self-balances after the insert operation.  If the provided value is equivalent to an existing element in the tree (in an Equatable sense) then the existing value is updated to the input value.
+    /// - Parameter value: An instance of the generic type to be inserted
+    /// - Complexity:  O(logN)
     open func insert(_ value: B) {
         queue.sync {
             guard root != nil else {
@@ -207,66 +216,107 @@ open class BinaryTree<B: Comparable> {
         }
     }
     
+    /// Insert new elements into the tree
+    /// - Parameter values: A sequence of the generic type
+    /// - Complexity: O(M•logN) where M is the number of elements in the input sequence and N is the number of elements in the BinaryTree
     open func insert<Seq: Sequence>(_ values: Seq) where Seq.Element == B {
         for value in values {
             insert(value)
         }
     }
     
+    /// Returns true if the BinaryTree contains the provided value.
+    /// - Parameter value: An instance of the generic type to be inserted
+    /// - Returns: true if the BinaryTree contains `value`
+    /// - Complexity:  O(logN)
     open func contains(_ value: B) -> Bool {
         return queue.sync {
             return root?.contains(value) ?? false
         }
     }
     
+    /// Removes the element from the BinaryTree.  This method provides no indication if the input value was not found in the tree.
+    /// - Parameter value: The instance of the generic type to be removed
+    /// - Complexity:  O(logN)
     open func remove(_ value: B) {
         queue.sync {
             root = root?.remove(value)
         }
     }
     
+    /// Removes the sequence of elements from the BinaryTree.
+    /// - Parameter values: A sequence of the generic type
+    /// - Complexity: O(M•logN) where M is the number of elements in the input sequence and N is the number of elements in the BinaryTree
     open func remove<Seq: Sequence>(_ values: Seq) where Seq.Element == B {
         for value in values {
             remove(value)
         }
     }
     
+    /// Removes all elements from the tree
+    open func removeAll() {
+        queue.sync {
+            root = nil
+        }
+    }
+    
+    /// Representation of all elements of the BinaryTree as an Array.  It is highly recommended that a copy of this property be stored for subsequent operations.
+    /// - Complexity: O(N•logN)
     open var enumerated: [B] {
         return queue.sync {
             return root?.enumerated ?? [B]()
         }
     }
     
+    /// The index of the input value in the BinaryTree.
+    /// - Parameter value: an instance of the generic type
+    /// - Returns: the integer valued index of `value` in the BinaryTree or nil if the BinaryTree does not contain the provided `value`.
+    /// - Complexity: O(logN)
     open func index(of value: B) -> Int? {
         return queue.sync {
            return root?.index(of: value, startingCount: 0)
         }
     }
     
+    /**
+     The value at the provided index.  Attempting to access an index greater than count-1 will result in the last value being returned.  Similarly, attempting to access a negative index will result in the first value being returned.
+     - Parameters:
+        - index: The index of the generic type to be removed
+     - throws: Exception if BinaryTree is empty
+     - Returns: The `value` in the BinaryTree at the provided `index`.
+     - Complexity: O(logN)
+    */
     open subscript(index: Int) -> B {
         return queue.sync {
+            guard root != nil else {
+                fatalError("Attempting to subscript an empty BinaryTree")
+            }
            return root![index]
         }
     }
     
+    /// The depth of the BinaryTree (also referred to as height) which is approximately log(`count`) of the number of elements `count`.
     open var depth: Int {
         return queue.sync {
             return root?.depth ?? 0
         }
     }
     
+    /// The number of elements in the BinaryTree.
     open var count: Int {
         return queue.sync {
             return root?.count ?? 0
         }
     }
     
+    /// True if the number of elements in the BinaryTree is zero.
     open var isEmpty: Bool {
         return queue.sync {
             return root == nil
         }
     }
     
+    /// True if each subtree in the BinaryTree has left and right subtrees with a depth within 1 of each other.
     open var isBalanced: Bool {
         return queue.sync {
             return root?.isBalanced ?? true
