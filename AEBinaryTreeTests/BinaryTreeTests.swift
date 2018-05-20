@@ -125,6 +125,8 @@ class BinaryTreeTests: XCTestCase {
         for index in 0..<sortedValues.count {
             XCTAssert(sortedValues[index]==tree[index], "Failure at \(index): Expected \(sortedValues[index]), got \(tree[index])")
         }
+        XCTAssert(tree[tree.count]==sortedValues.last!, "Failed array bounds")
+        XCTAssert(tree[-1]==sortedValues.first!, "Failed array bounds")
     }
 
     func testRemove() {
@@ -142,9 +144,22 @@ class BinaryTreeTests: XCTestCase {
         XCTAssert(tree.isEmpty  , "Wrong count \(tree.count)")
     }
     
+    func testDeduplication() {
+        let tree = BinaryTree<Int>()
+        let values = [0,1,2,3,3,4,5,6]
+        print(values)
+        tree.insert(values)
+        print(tree)
+        let enumerated = tree.enumerated
+        print(enumerated)
+        XCTAssert(enumerated[3] == 3, "Indexing failed")
+        XCTAssert(enumerated[4] == 4, "Indexing failed")
+    }
+    
     func testEnumerate() {
         let tree = BinaryTree<Int>()
         let values = [6,5,4,3,2,1,0]
+        print(values)
         tree.insert(values)
         print(tree)
         print(tree.enumerated)
@@ -155,7 +170,6 @@ class BinaryTreeTests: XCTestCase {
         XCTAssert(tree.enumerated[7] == 7, "Indexing failed")
         XCTAssert(tree.enumerated[5] == 5, "Indexing failed")
     }
-    
     func testIndexing() {
         
         let tree = BinaryTree<Int>()
