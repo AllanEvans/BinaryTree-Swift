@@ -203,6 +203,8 @@ open class BinaryTree<B: Comparable> {
     private var root: Tree?
     private var queue = DispatchQueue(label: "com.Aelyssum.BinaryTree.\(type(of: B.self)).\(Date())")
     
+    public init() { }
+    
     /// Insert a new element into the tree.  The tree self-balances after the insert operation.  If the provided value is equivalent to an existing element in the tree (in an Equatable sense) then the existing value is updated to the input value.
     /// - Parameter value: An instance of the generic type to be inserted
     /// - Complexity:  O(logN)
