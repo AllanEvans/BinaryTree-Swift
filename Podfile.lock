@@ -1,5 +1,5 @@
 PODS:
-  - AEBinaryTree (1.0.0)
+  - AEBinaryTree (1.0.3)
 
 DEPENDENCIES:
   - AEBinaryTree (from `.`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: .
 
 SPEC CHECKSUMS:
-  AEBinaryTree: da232965950de4537e82ff814efc14762aca2ab1
+  AEBinaryTree: 8e9c6a2b5a2f0cd5fedc1f9045f9b24e9476846a
 
 PODFILE CHECKSUM: e01141e4647d1aa80c0270cb7bd47b8ac0831dad
 
