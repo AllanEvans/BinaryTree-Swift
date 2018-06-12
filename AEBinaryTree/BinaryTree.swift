@@ -48,7 +48,6 @@ open class BinaryTree<B: Comparable> {
             func insertRight(_ newValue: B) -> Tree {
                 rightTree = rightTree!.insert(newValue)
                 if rightTree!.depth > (leftTree?.depth ?? 0)+1 {
-                    print("Rotating left at node \(self.value)")
                     if rightTree!.isLeftHeavy {
                         rightTree = rightTree!.rotateRight()
                     }
@@ -295,6 +294,14 @@ open class BinaryTree<B: Comparable> {
             }
            return root![index]
         }
+    }
+    
+    open var first: B? {
+        return root?.minValue
+    }
+    
+    open var last: B? {
+        return root?.maxValue
     }
     
     /// The depth of the BinaryTree (also referred to as height) which is approximately log(`count`) of the number of elements `count`.

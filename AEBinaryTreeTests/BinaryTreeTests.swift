@@ -48,6 +48,8 @@ class BinaryTreeTests: XCTestCase {
         XCTAssert(tree.count == expectedCount, "Count should be \(expectedCount), got \(tree.count)\n\(tree)")
         XCTAssert(tree.depth == expectedDepth, "Depth should be \(expectedDepth), got \(tree.depth)\n\(tree)")
         print(tree)
+        XCTAssert(tree.first == 1, "First should be 1")
+        XCTAssert(tree.last == 5, "Last should be 5")
     }
 
     func test1() {
